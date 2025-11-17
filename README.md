@@ -1,32 +1,81 @@
-# DiplomaNFT - Sistema de Emissão de Certificados na Blockchain
+# Plataforma de Certificados Acadêmicos Tokenizados (Soulbound NFTs)
 
-Projeto Python para emissão de certificados (NFTs) na blockchain usando Web3.
+Projeto desenvolvido para a disciplina de Criptomoedas e Blockchain. Implementa um sistema de emissão de diplomas digitais utilizando Smart Contracts na rede Ethereum.
 
-## Pré-requisitos
+## 📋 Sobre o Projeto
+
+Uma aplicação que permite a universidades emitirem diplomas como **Soulbound Tokens (SBTs)**. Diferente de NFTs comuns, estes tokens são **intransferíveis**, garantindo que o aluno não possa "vender" ou transferir seu diploma para outra carteira, mantendo a integridade da identidade acadêmica.
+
+## 🛠 Tecnologias
+
+- **Blockchain:** Ethereum (EVM)
+- **Linguagem:** Solidity (Smart Contract)
+- **Backend:** Python (Web3.py)
+- **Padrão:** ERC-721 (modificado para SBT)
+
+## 📝 Justificativas (Requisitos do Projeto)
+
+### Por que Blockchain?
+
+A blockchain garante **autenticidade imutável** e **verificação pública**.
+
+- **Ganho:** Elimina fraudes de diplomas e reduz o tempo de verificação por empregadores de dias para milissegundos.
+- **Perda:** Custo de taxa de rede (Gas), mitigado pelo uso de redes Layer-2.
+
+### Por que Ethereum?
+
+Escolhida pela **universalidade**. Um diploma precisa ser verificável por qualquer entidade no mundo (público), e não apenas por membros de uma rede fechada (como no Hyperledger Fabric). O padrão ERC-721 fornece a estrutura ideal para identidade única.
+
+### Soluções de Mercado
+
+1. **Blockcerts (MIT):** Padrão aberto para credenciais.
+2. **Acreditta:** Emissão de badges digitais na América Latina.
+3. **POAP:** Protocolo de prova de presença.
+
+## 📊 Dados da Implementação
+
+- **Linhas de Código (Solidity):** ~35 linhas
+- **Linhas de Código (Python):** ~90 linhas
+- **Desempenho:**
+  - Emissão Local (Ganache): < 100ms
+  - Custo de Gas estimado: ~150.000 gwei por diploma
+
+## 🚀 Como Rodar
+
+### Pré-requisitos
 
 - Python 3.11.5 (gerenciado via pyenv)
 - Ganache rodando em `http://127.0.0.1:7545`
 - Contrato deployado no Ganache
 
-## Instalação
+### Instalação
 
 1. **Ative o ambiente virtual:**
    ```bash
    source venv/bin/activate
    ```
 
-2. **Instale as dependências (se necessário):**
+2. **Instale as dependências:**
    ```bash
    pip install -r requirements.txt
    ```
+   Ou instale diretamente:
+   ```bash
+   pip install web3
+   ```
 
-## Uso
+### Execução
 
 **IMPORTANTE:** Sempre ative o ambiente virtual antes de executar o script:
 
 ```bash
 source venv/bin/activate
 python3 app.py
+```
+
+Ou usando o caminho completo:
+```bash
+python scripts/app.py
 ```
 
 ## Por que usar ambiente virtual?
@@ -36,7 +85,7 @@ O ambiente virtual (`venv`) isola as dependências do projeto, garantindo que:
 - O projeto funcione mesmo se você tiver múltiplas versões do Python
 - Outras pessoas possam replicar o ambiente exatamente
 
-## Solução de Problemas
+## 🔧 Solução de Problemas
 
 Se você receber `ModuleNotFoundError: No module named 'web3'`:
 
@@ -54,4 +103,3 @@ Se você receber `ModuleNotFoundError: No module named 'web3'`:
    ```bash
    pip install -r requirements.txt
    ```
-
