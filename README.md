@@ -68,15 +68,26 @@ Escolhida pela **universalidade**. Um diploma precisa ser verificável por qualq
 
 **IMPORTANTE:** Sempre ative o ambiente virtual antes de executar o script:
 
+#### Opção 1: Script Python (CLI)
 ```bash
 source venv/bin/activate
 python3 app.py
 ```
 
-Ou usando o caminho completo:
+#### Opção 2: Dashboard Web (Streamlit) - Recomendado
 ```bash
-python scripts/app.py
+source venv/bin/activate
+streamlit run dashboard.py
 ```
+
+O dashboard abrirá automaticamente no navegador em `http://localhost:8501`
+
+**Funcionalidades do Dashboard:**
+- 📊 Visão geral da conexão com a blockchain
+- 🎓 Interface visual para emitir certificados
+- 📜 Consulta de certificados por endereço
+- 📈 Estatísticas da rede em tempo real
+- ⚙️ Configurações acessíveis via sidebar
 
 ## Por que usar ambiente virtual?
 
